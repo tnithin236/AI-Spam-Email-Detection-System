@@ -1,0 +1,62 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Virtual environments ---
+venv/
+env/
+ENV/
+.venv/
+
+# --- Environment variables / secrets ---
+.env
+.env.local
+credentials.json
+token.json
+token.pickle
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- FastAPI / uvicorn ---
+*.log
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Trained model artifacts (large binary files — see note below) ---
+# Uncomment these if you don't want to commit large .pkl files to git.
+# GitHub has a 100MB per-file hard limit and discourages large binaries
+# in regular git repos. If you want the trained models in your repo,
+# leave these commented out (they're small enough here to be fine).
+# models/*.pkl
+
+# --- Test artifacts ---
+.pytest_cache/
+.coverage
+htmlcov/

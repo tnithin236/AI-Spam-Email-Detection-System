@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>SpamShield — Email Spam Detector</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🛡️ SpamShield</h1>
+      <p class="subtitle">Intelligent Email Spam Detection</p>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <label for="model-select">Model</label>
+        <select id="model-select"></select>
+      </div>
+
+      <label for="subject">Subject</label>
+      <input id="subject" type="text" placeholder="Congratulations! You won a $1,000,000 prize!" />
+
+      <label for="body">Email Content</label>
+      <textarea id="body" rows="8" placeholder="Dear user, you have won..."></textarea>
+
+      <button id="analyze-btn">Analyze Email</button>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>📊 Dashboard</h2>
+      <div id="stats" class="stats-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>📁 Batch Analysis (CSV)</h2>
+      <p class="hint">Upload a CSV with a <code>text</code> column (optional <code>subject</code> column). Get back the same CSV with predictions added.</p>
+      <input id="csv-file" type="file" accept=".csv" />
+      <button id="batch-btn">Analyze CSV</button>
+      <div id="batch-result" class="hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>🧪 Model Comparison</h2>
+      <div id="model-metrics"></div>
+    </section>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

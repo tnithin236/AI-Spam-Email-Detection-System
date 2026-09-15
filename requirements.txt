@@ -1,0 +1,6 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+scikit-learn==1.6.1
+numpy>=1.26
+nltk==3.9.1
+python-multipart==0.0.9

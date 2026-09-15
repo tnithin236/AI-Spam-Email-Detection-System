@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #0F1419;
+  --panel: #161D26;
+  --panel-raised: #1C2530;
+  --border: #262F3B;
+  --text: #E8EDF2;
+  --text-muted: #8B96A5;
+  --spam: #E5484D;
+  --spam-bg: rgba(229, 72, 77, 0.12);
+  --safe: #3DD68C;
+  --safe-bg: rgba(61, 214, 140, 0.12);
+  --focus: #6C9BFF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+header h1 {
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 14px 0 6px;
+}
+
+label:first-of-type { margin-top: 0; }
+
+input[type="text"], textarea, select, input[type="file"] {
+  width: 100%;
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  resize: vertical;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.row select {
+  width: auto;
+}
+
+button {
+  margin-top: 16px;
+  background: var(--focus);
+  color: #0B1220;
+  border: none;
+  border-radius: 4px;
+  padding: 11px 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover { opacity: 0.9; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.hidden { display: none; }
+
+.result {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.result.spam {
+  border-color: var(--spam);
+  background: var(--spam-bg);
+}
+
+.result.not_spam {
+  border-color: var(--safe);
+  background: var(--safe-bg);
+}
+
+.result-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.result.spam .result-label { color: var(--spam); }
+.result.not_spam .result-label { color: var(--safe); }
+
+.result-confidence {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin: 4px 0 12px;
+}
+
+.indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.indicator-chip {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.indicator-chip.spam-word {
+  border-color: var(--spam);
+  color: var(--spam);
+}
+
+.indicator-chip.safe-word {
+  border-color: var(--safe);
+  color: var(--safe);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-box {
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.stat-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 0;
+}
+
+.hint code {
+  background: var(--panel-raised);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+table.metrics {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+table.metrics th, table.metrics td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+table.metrics th {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+#batch-result {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
